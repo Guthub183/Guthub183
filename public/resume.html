@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kachibhotla Satya Pranav - Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.38;
+    color: #1a1a1a;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: #1a6dd4;
+    text-decoration: underline;
+    text-underline-offset: 1.5pt;
+  }
+
+  a:hover {
+    color: #0d4ea6;
+  }
+
+  @media print {
+    a {
+      color: #1a6dd4;
+      text-decoration: underline;
+    }
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 12mm 16mm 10mm 16mm;
+  }
+
+  @media print {
+    .page {
+      padding: 12mm 15mm 10mm 15mm;
+      margin: 0;
+    }
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding-bottom: 7pt;
+    border-bottom: 2.5pt solid #1a1a1a;
+    margin-bottom: 8pt;
+  }
+
+  .header h1 {
+    font-size: 22pt;
+    font-weight: 700;
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+  }
+
+  .header .tagline {
+    font-size: 9.5pt;
+    color: #333;
+    margin-bottom: 4pt;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3pt 12pt;
+    font-size: 9pt;
+    color: #333;
+  }
+
+  .contact-row .sep { color: #666; }
+
+  .links-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2pt 10pt;
+    font-size: 8.5pt;
+    margin-top: 3pt;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 7pt;
+  }
+
+  .section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2pt;
+    border-bottom: 1.5pt solid #1a1a1a;
+    padding-bottom: 2pt;
+    margin-bottom: 5pt;
+    color: #1a1a1a;
+  }
+
+  /* Summary */
+  .summary p {
+    font-size: 9pt;
+    color: #333;
+    line-height: 1.45;
+  }
+
+  /* Experience */
+  .entry {
+    margin-bottom: 5pt;
+  }
+
+  .entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .entry-title {
+    font-weight: 600;
+    font-size: 9.5pt;
+  }
+
+  .entry-date {
+    font-size: 8.5pt;
+    color: #1a1a1a;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .entry-desc {
+    font-size: 9pt;
+    color: #222;
+    margin-top: 1pt;
+    line-height: 1.38;
+  }
+
+  .entry-bullets {
+    font-size: 9pt;
+    color: #222;
+    margin-top: 2pt;
+    padding-left: 15pt;
+    line-height: 1.42;
+    list-style-type: disc;
+  }
+
+  .entry-bullets li {
+    margin-bottom: 1pt;
+    padding-left: 2pt;
+  }
+
+  .entry-bullets li::marker {
+    color: #1a1a1a;
+    font-size: 9pt;
+  }
+
+  /* Projects */
+  .project-grid {
+    padding-left: 15pt;
+    list-style-type: disc;
+  }
+
+  .project-grid li {
+    font-size: 9pt;
+    line-height: 1.42;
+    margin-bottom: 2pt;
+    padding-left: 2pt;
+    color: #222;
+  }
+
+  .project-grid li::marker {
+    color: #1a1a1a;
+    font-size: 9pt;
+  }
+
+  .project-grid strong {
+    font-weight: 600;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 92pt 1fr;
+    gap: 2pt 8pt;
+    font-size: 9pt;
+  }
+
+  .skill-label {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  .skill-value {
+    color: #222;
+  }
+
+  /* Education */
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-title {
+    font-weight: 600;
+    font-size: 9.5pt;
+  }
+
+  .edu-date {
+    font-size: 8.5pt;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  .edu-detail {
+    font-size: 9pt;
+    color: #333;
+  }
+
+  /* Screen preview */
+  @media screen {
+    body { background: #e0e0e0; }
+    .page {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+      margin: 16px auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Kachibhotla Satya Pranav</h1>
+    <div class="tagline">AI/ML Enthusiast &middot; Python Developer &middot; BCA Student</div>
+    <div class="contact-row">
+      <span><a href="mailto:ksatyapranav6@gmail.com">ksatyapranav6@gmail.com</a></span>
+      <span class="sep">|</span>
+      <span>India</span>
+      <span class="sep">|</span>
+      <span><a href="https://github.com/Guthub183">github.com/Guthub183</a></span>
+    </div>
+    <div class="links-row">
+      <a href="https://github.com/Guthub183">GitHub</a>
+      <a href="https://linkedin.com/in/k-satya-pranav-9240b9321">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section summary">
+    <div class="section-title">Summary</div>
+    <p>BCA student at Institute of Management Studies, Ghaziabad, specializing in Python, AI/ML, and database systems. Focuses on Deep Learning, Natural Language Processing, and database architectures. Completed Harvard CS50's Introduction to Artificial Intelligence with Python and holds 11 certifications from MongoDB University covering database indexing, aggregations, CRUD operations, and transaction management.</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Student Contributor &mdash; Harvard CS50 AI Projects</span>
+        <span class="entry-date">2024 &ndash; Present</span>
+      </div>
+      <ul class="entry-bullets">
+        <li>Implemented AI search algorithms, classifier models, and neural network architectures.</li>
+        <li>Built context-free grammar parsers for syntactic analysis of sentences in Python.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- KEY PROJECTS -->
+  <div class="section">
+    <div class="section-title">Key Projects</div>
+    <ul class="project-grid">
+      <li><strong><a href="https://github.com/Guthub183/Harvard-CS50s-Introduction-to-Artificial-Intelligence-with-Python-Projects">Harvard CS50 AI Projects</a></strong> &mdash; Implementations of AI concepts from Harvard CS50 AI course, including pathfinding agents, logic engines, probability models, neural network classifiers, and NLP grammar parsers.</li>
+    </ul>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-value">Python, JavaScript (Intermediate), C (Intermediate), Dart, Java, HTML/CSS</span>
+
+      <span class="skill-label">Frameworks</span>
+      <span class="skill-value">Flutter</span>
+
+      <span class="skill-label">Tools / Databases</span>
+      <span class="skill-value">MongoDB, MySQL, Power BI, Excel, Git, Linux, Docker, Google Colab, Pandas, TensorFlow</span>
+
+      <span class="skill-label">Platforms</span>
+      <span class="skill-value">Amazon Web Services (AWS), GitHub Pages, Termux</span>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="entry">
+      <div class="edu-header">
+        <span class="edu-title">Institute of Management Studies (IMS), Ghaziabad, Uttar Pradesh</span>
+        <span class="edu-date">2025 &ndash; Present</span>
+      </div>
+      <div class="edu-detail">Bachelor of Computer Applications (BCA)</div>
+    </div>
+
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <ul class="project-grid">
+      <li><strong>MongoDB Certifications</strong> &mdash; MongoDB University (March 2026):
+        <ul>
+          <li>Getting Started with MongoDB Atlas &middot; Introduction to MongoDB</li>
+          <li>MongoDB and the Document Model &middot; Connecting to MongoDB using Mongo Shell</li>
+          <li>MongoDB CRUD Operations (Insert, Find, Replace, Delete, Modifying Query Results)</li>
+          <li>MongoDB Indexes &middot; MongoDB Aggregation &middot; MongoDB Transactions</li>
+          <li>Introduction to Atlas Search</li>
+        </ul>
+      </li>
+      <li><strong>AWS AI Practitioner Challenge</strong> &mdash; Udacity:
+        <ul>
+          <li>Foundations of Machine Learning &amp; Artificial Intelligence (AI)</li>
+          <li>Generative AI, Large Language Models (LLMs), and Ethical AI Use</li>
+          <li>Building AI applications with AWS tools including Amazon Bedrock &amp; PartyRock</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="section">
+    <div class="section-title">Achievements &amp; Recognition</div>
+    <ul class="project-grid">
+      <li>Completed Harvard CS50's Introduction to Artificial Intelligence with Python curriculum.</li>
+      <li>Earned 11 MongoDB University Certifications in database design and query implementation.</li>
+      <li>Active member of the GitHub Developer Program.</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
