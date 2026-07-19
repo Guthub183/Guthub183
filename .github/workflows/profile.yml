@@ -5,17 +5,20 @@ on:
   schedule:
     - cron: "0 0,12 * * *"  # midnight + noon UTC
 
+permissions:
+  contents: write
+
 jobs:
   generate-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Generate Profile Image
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
       - name: Commit & Push
