@@ -51,3 +51,33 @@ jobs:
           git config user.email "ksatyapranav6@gmail.com"
           git add -A
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile animations Co-Authored-By: Kachibhotla Satya Pranav <ksatyapranav6@gmail.com>" && git push)
+
+  # Generate GitHub Readme Stats
+  readme-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&icon_color=A855F7&text_color=c9d1d9&ring_color=A855F7
+          path: profile-stats/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&langs_count=8
+          path: profile-stats/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & Push Stats
+        run: |
+          git config user.name "Guthub183"
+          git config user.email "ksatyapranav6@gmail.com"
+          git add profile-stats/*.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile stats SVG" && git push)
+
