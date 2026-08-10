@@ -33,11 +33,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      # 2.5. Fix directory permissions after actions that may restrict them
-      - name: Fix directory permissions
+      # 2.5. Clean up and fix permissions - remove problematic dist subdirectory
+      - name: Clean and fix dist directory
         run: |
-          sudo chmod -R 755 dist 2>/dev/null || chmod -R 755 dist 2>/dev/null || true
-          sudo chmod -R 755 profile-3d-contrib 2>/dev/null || chmod -R 755 profile-3d-contrib 2>/dev/null || true
+          rm -rf dist/profile-3d-contrib || true
+          sudo rm -rf dist/profile-3d-contrib || true
+          chmod -R u+w dist 2>/dev/null || true
 
       # 3. Move 3D Graph files into dist/profile-3d-contrib/
       - name: Move 3D Graphics to dist
