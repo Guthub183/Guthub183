@@ -12,12 +12,12 @@ permissions:
   contents: write
 
 jobs:
-  # Generate Snake Animation
-  snake:
+  generate-graphics:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      # 1. Generate Snake Animation inside dist/
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
@@ -26,46 +26,42 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Push Snake to output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # Generate 3D Contribution Graph and Profile Stats
-  profile-graphics:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
+      # 2. Generate 3D Graph (places files in profile-3d-contrib/)
       - name: Generate 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
+      # 3. Move 3D Graph files into dist/profile-3d-contrib/
+      - name: Move 3D Graphics to dist
+        run: |
+          mkdir -p dist/profile-3d-contrib
+          cp -r profile-3d-contrib/* dist/profile-3d-contrib/
+
+      # 4. Generate Stats card inside dist/profile-stats/
       - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
           options: username=${{ github.repository_owner }}&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&icon_color=A855F7&text_color=c9d1d9&ring_color=A855F7
-          path: profile-stats/stats.svg
+          path: dist/profile-stats/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 5. Generate Top Languages card inside dist/profile-stats/
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&langs_count=8
-          path: profile-stats/top-langs.svg
+          path: dist/profile-stats/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit & Push Graphics
-        run: |
-          git config user.name "Guthub183"
-          git config user.email "ksatyapranav6@gmail.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile graphics (3D graph and stats cards) Co-Authored-By: Kachibhotla Satya Pranav <ksatyapranav6@gmail.com>" && git push)
-
+      # 6. Deploy the entire dist/ folder to the 'output' branch (which doesn't show green contributions on main)
+      - name: Push graphics to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

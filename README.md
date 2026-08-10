@@ -70,11 +70,11 @@ const satya = {
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> GitHub Stats
 
-<img src="profile-stats/stats.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Guthub183/Guthub183/output/profile-stats/stats.svg" width="100%"/>
 
 <img src="https://streak-stats.demolab.com?user=Guthub183&theme=radical&hide_border=true&background=0D1117&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" width="100%"/>
 
-<img src="profile-stats/top-langs.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Guthub183/Guthub183/output/profile-stats/top-langs.svg" width="100%"/>
 
 </td>
 </tr>
@@ -182,7 +182,7 @@ const satya = {
 <br/>
 
 <div align="center">
-  <img src="profile-3d-contrib/profile-night-green.svg" width="100%"/>
+  <img src="https://raw.githubusercontent.com/Guthub183/Guthub183/output/profile-3d-contrib/profile-night-green.svg" width="100%"/>
 </div>
 
 </details>
