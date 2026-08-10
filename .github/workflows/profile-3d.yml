@@ -34,29 +34,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # Generate 3D Contribution Graph
-  contrib-3d:
+  # Generate 3D Contribution Graph and Profile Stats
+  profile-graphics:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+      - name: Generate 3D Graph
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-
-      - name: Commit & Push 3D Graph
-        run: |
-          git config user.name "Guthub183"
-          git config user.email "ksatyapranav6@gmail.com"
-          git add -A
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile animations Co-Authored-By: Kachibhotla Satya Pranav <ksatyapranav6@gmail.com>" && git push)
-
-  # Generate GitHub Readme Stats
-  readme-stats:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
       - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@v2
@@ -74,10 +62,10 @@ jobs:
           path: profile-stats/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Commit & Push Stats
+      - name: Commit & Push Graphics
         run: |
           git config user.name "Guthub183"
           git config user.email "ksatyapranav6@gmail.com"
-          git add profile-stats/*.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile stats SVG" && git push)
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update profile graphics (3D graph and stats cards) Co-Authored-By: Kachibhotla Satya Pranav <ksatyapranav6@gmail.com>" && git push)
 
