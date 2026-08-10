@@ -43,6 +43,7 @@ jobs:
       # 3. Move 3D Graph files into dist/profile-3d-contrib/
       - name: Move 3D Graphics to dist
         run: |
+          sudo chown -R $USER:$USER .
           mkdir -p dist/profile-3d-contrib
           cp -r profile-3d-contrib/* dist/profile-3d-contrib/
 
