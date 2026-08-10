@@ -26,15 +26,18 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Fix permissions
-        run: sudo chown -R $USER:$USER dist
-
       # 2. Generate 3D Graph (places files in profile-3d-contrib/)
       - name: Generate 3D Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+
+      # 2.5. Fix directory permissions after actions that may restrict them
+      - name: Fix directory permissions
+        run: |
+          sudo chmod -R 755 dist 2>/dev/null || chmod -R 755 dist 2>/dev/null || true
+          sudo chmod -R 755 profile-3d-contrib 2>/dev/null || chmod -R 755 profile-3d-contrib 2>/dev/null || true
 
       # 3. Move 3D Graph files into dist/profile-3d-contrib/
       - name: Move 3D Graphics to dist
