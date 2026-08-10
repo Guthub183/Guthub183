@@ -70,11 +70,11 @@ const satya = {
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> GitHub Stats
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=Guthub183&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&icon_color=A855F7&text_color=c9d1d9&ring_color=A855F7" width="100%"/>
+<img src="https://github-stats-extended.vercel.app/api?username=Guthub183&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&icon_color=A855F7&text_color=c9d1d9&ring_color=A855F7" width="100%"/>
 
 <img src="https://streak-stats.demolab.com?user=Guthub183&theme=radical&hide_border=true&background=0D1117&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" width="100%"/>
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Guthub183&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&langs_count=8" width="100%"/>
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Guthub183&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=A855F7&langs_count=8" width="100%"/>
 
 </td>
 </tr>
