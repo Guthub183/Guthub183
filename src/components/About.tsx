@@ -62,7 +62,7 @@ export default function About({ profile }: { profile: ProfileData }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="pt-24 pb-20 bg-[#0a0a0a] relative overflow-hidden" ref={ref}>
+    <section id="about" className="pt-24 pb-20 bg-transparent relative overflow-hidden" ref={ref}>
       {/* Subtle background elements */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div

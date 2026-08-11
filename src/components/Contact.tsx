@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="pt-24 pb-20 bg-[#121212] relative overflow-hidden" ref={ref}>
+    <section id="contact" className="pt-24 pb-20 bg-transparent relative overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div

@@ -29,7 +29,7 @@ export default function Experience() {
   });
 
   return (
-    <section id="experience" className="pt-24 pb-20 bg-[#121212] relative overflow-hidden" ref={ref}>
+    <section id="experience" className="pt-24 pb-20 bg-transparent relative overflow-hidden" ref={ref}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div

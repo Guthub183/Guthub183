@@ -162,7 +162,7 @@ export default function Hero({ profile }: { profile: ProfileData }) {
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] relative overflow-hidden bg-[#0a0a0a]"
+      className="min-h-[100dvh] relative overflow-hidden bg-transparent"
     >
       {/* Main Content */}
       <main className="relative min-h-[100dvh] flex flex-col">
